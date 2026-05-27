@@ -7063,6 +7063,7 @@ snapshots:
       '@img/sharp-win32-ia32': 0.34.5
       '@img/sharp-win32-x64': 0.34.5
     optional: true
+    requiresBuild: true
 
   shebang-command@2.0.0:
     dependencies:
@@ -7412,6 +7413,7 @@ snapshots:
       '@unrs/resolver-binding-win32-arm64-msvc': 1.12.2
       '@unrs/resolver-binding-win32-ia32-msvc': 1.12.2
       '@unrs/resolver-binding-win32-x64-msvc': 1.12.2
+    requiresBuild: true
 
   upath@1.2.0: {}
 
