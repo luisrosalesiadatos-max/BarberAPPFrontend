@@ -1,0 +1,68 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background:             40 30% 96%;
+    --foreground:             220 25% 8%;
+    --card:                   0 0% 100%;
+    --card-foreground:        220 25% 8%;
+    --popover:                0 0% 100%;
+    --popover-foreground:     220 15% 40%;
+    --primary:                36 65% 42%;
+    --primary-foreground:     0 0% 100%;
+    --secondary:              40 20% 93%;
+    --secondary-foreground:   220 25% 8%;
+    --muted:                  40 15% 91%;
+    --muted-foreground:       220 10% 48%;
+    --accent:                 36 65% 42%;
+    --accent-foreground:      0 0% 100%;
+    --destructive:            0 72% 51%;
+    --destructive-foreground: 0 0% 100%;
+    --border:                 40 15% 87%;
+    --input:                  40 15% 87%;
+    --ring:                   36 65% 42%;
+    --radius:                 0.75rem;
+    --font-geist-sans:        ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+    --font-geist-mono:        ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", monospace;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground antialiased;
+    font-feature-settings: 'rlig' 1, 'calt' 1;
+  }
+
+  /* Custom scrollbar */
+  ::-webkit-scrollbar {
+    width: 6px;
+    height: 6px;
+  }
+  ::-webkit-scrollbar-track  { @apply bg-transparent; }
+  ::-webkit-scrollbar-thumb  { @apply bg-border rounded-full; }
+  ::-webkit-scrollbar-thumb:hover { @apply bg-muted-foreground; }
+}
+
+@layer components {
+  .stat-card {
+    @apply rounded-2xl border bg-card p-6 flex flex-col gap-1.5
+           shadow-[0_1px_3px_rgba(0,0,0,0.06),0_4px_16px_rgba(0,0,0,0.04)];
+  }
+  .badge-estado {
+    @apply inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-semibold;
+  }
+  .sidebar-link {
+    @apply flex items-center gap-3 px-3 py-2.5 rounded-xl text-sm font-medium
+           text-muted-foreground hover:text-foreground hover:bg-secondary
+           transition-all duration-150;
+  }
+  .sidebar-link.active {
+    @apply bg-primary/10 text-primary font-semibold;
+  }
+}
